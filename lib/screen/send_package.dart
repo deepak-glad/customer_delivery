@@ -1,5 +1,6 @@
 import 'package:customer_delivery_app/Provider/dateTime_provider.dart';
 import 'package:customer_delivery_app/screen/order_summary.dart';
+import 'package:customer_delivery_app/widgets/drawer.dart';
 import 'package:customer_delivery_app/widgets/send_package_detail.dart';
 import 'package:date_format/date_format.dart';
 import 'package:flutter/material.dart';
@@ -16,15 +17,10 @@ class SendPackage extends StatefulWidget {
 class _SendPackageState extends State<SendPackage> {
   double _height;
   double _width;
-
   String _setTime, _setDate;
-
   String _hour, _minute, _time;
-
   String dateTime;
-
   DateTime selectedDate = DateTime.now();
-
   TimeOfDay selectedTime = TimeOfDay(hour: 00, minute: 00);
 
   TextEditingController dateController = TextEditingController();
@@ -63,32 +59,38 @@ class _SendPackageState extends State<SendPackage> {
   }
 
   Future<Null> _trySave() async {
-    if (dateController.text.isNotEmpty || timeController.text.isNotEmpty)
-      await Navigator.of(context)
-          .pushNamed(OrderSummary.routeName, arguments: 'schedule');
-    Provider.of<SelectdatetimeProvider>(context, listen: false)
-        .additems(dateController.text, timeController.text);
+    final String date = dateController.text;
+    final String time = timeController.text;
+
     _selectDate(context);
     _selectTime(context);
+    if (dateController.text.isNotEmpty || timeController.text.isNotEmpty)
+      Navigator.of(context)
+          .pushNamed(OrderSummary.routeName, arguments: 'schedule');
+    return Provider.of<SelectdatetimeProvider>(context, listen: false)
+        .additems(date, time);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Send Packages'),
-        elevation: 0.0,
+        centerTitle: true,
+        title: Text(
+          'Send Packages',
+          style: TextStyle(color: Colors.black),
+        ),
         actions: [
           TextButton(
               onPressed: () {},
               child: Text(
-                'HELP',
-                style: TextStyle(
-                    color: Theme.of(context).cardColor,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
-              ))
+                'Help',
+                style:
+                    TextStyle(fontSize: 17, color: Theme.of(context).cardColor),
+              )),
         ],
+        iconTheme: IconThemeData(color: Theme.of(context).cardColor),
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SingleChildScrollView(
         child: Padding(

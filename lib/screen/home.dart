@@ -9,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -36,7 +37,7 @@ class HomeScreen extends StatelessWidget {
             boxShadow: [
               BoxShadow(color: Colors.grey, blurRadius: 5, spreadRadius: 3)
             ]),
-        height: size.height / 2 + 50,
+        height: size.height > 600 ? size.height / 2 + 50 : size.height / 2,
         width: size.width,
         child: Column(
           children: [

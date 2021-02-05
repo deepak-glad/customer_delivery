@@ -34,6 +34,7 @@ dependencies:
   intl: ^0.16.1
   date_format: ^1.0.9
   provider: ^4.3.3
+  material_design_icons_flutter: ^4.0.5855
 
 dev_dependencies:
   flutter_test:
@@ -57,6 +58,11 @@ flutter:
     - assets/mobile.png
     - assets/small.jpg
     - assets/medium.jpg
+    - assets/clothes.jpg
+    - assets/food.jpg
+    - assets/gadgets.jpg
+    - assets/owl.png
+    - assets/credit.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

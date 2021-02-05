@@ -37,6 +37,7 @@ class _PAckageDetailItemsState extends State<PAckageDetailItems> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.only(top: 18.0),
       child: Column(children: [
@@ -44,40 +45,45 @@ class _PAckageDetailItemsState extends State<PAckageDetailItems> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              children: [
-                Text(
-                  'Select the corresponding size of your percel',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Image.asset(
-                    isSelected[0]
-                        ? 'assets/small.jpg'
-                        : isSelected[1]
-                            ? 'assets/medium.jpg'
-                            : 'assets/mobile.png',
-                    fit: BoxFit.cover,
-                    height: 250,
+            Container(
+              width:
+                  size.width > 400 ? size.width / 2 + 70 : size.width / 2 + 50,
+              child: Column(
+                children: [
+                  Text(
+                    'Select the corresponding size of your percel',
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                   ),
-                ),
-                Container(
-                  // margin: const EdgeInsets.only(right: 35, top: 10),
-                  // alignment: Alignment.topLeft,
-                  // color: Colors.yellow,
-                  margin: const EdgeInsets.all(15),
-                  child: Text(
-                    isSelected[0]
-                        ? 'Size as about 5 KG'
-                        : isSelected[1]
-                            ? 'Weight between 5 KG to 15 KG'
-                            : 'Weight above 15 kG ',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    // textAlign: TextAlign.start,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(
+                      isSelected[0]
+                          ? 'assets/small.jpg'
+                          : isSelected[1]
+                              ? 'assets/medium.jpg'
+                              : 'assets/mobile.png',
+                      fit: BoxFit.cover,
+                      height: 250,
+                    ),
                   ),
-                ),
-              ],
+                  Container(
+                    // margin: const EdgeInsets.only(right: 35, top: 10),
+                    // alignment: Alignment.topLeft,
+                    // color: Colors.yellow,
+                    margin: const EdgeInsets.all(15),
+                    child: Text(
+                      isSelected[0]
+                          ? 'Size as about 5 KG'
+                          : isSelected[1]
+                              ? 'Weight between 5 KG to 15 KG'
+                              : 'Weight above 15 kG ',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      // textAlign: TextAlign.start,
+                    ),
+                  ),
+                ],
+              ),
             ),
             ToggleButtons(
                 direction: Axis.vertical,

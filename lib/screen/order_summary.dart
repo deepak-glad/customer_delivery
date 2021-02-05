@@ -302,74 +302,87 @@ class OrderSummary extends StatelessWidget {
               '85269562962',
             ),
             Container(
-              // height: 150,
-              width: MediaQuery.of(context).size.width,
-              margin: const EdgeInsets.all(8),
-              padding: const EdgeInsets.all(8),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.white,
-                  boxShadow: [BoxShadow(color: Colors.grey)]),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Package Detail',
-                      style: TextStyle(
-                          fontSize: 22,
-                          color: Theme.of(context).cardColor,
-                          fontWeight: FontWeight.w500),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                // height: 150,
+                width: MediaQuery.of(context).size.width,
+                margin: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.white,
+                    boxShadow: [BoxShadow(color: Colors.grey)]),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Product sized',
+                            'Package Detail',
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w500),
+                                fontSize: 22,
+                                color: Theme.of(context).cardColor,
+                                fontWeight: FontWeight.w500),
                           ),
-                          Text(
-                            'small',
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w400),
+                          TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Text(
+                                'edit',
+                                style: TextStyle(fontSize: 17),
+                              ))
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Text('Product sized',
+                          style: TextStyle(
+                              fontSize: 19, fontWeight: FontWeight.w500)),
+                      Row(
+                        children: [
+                          Icon(Icons.format_size, color: Colors.deepOrange),
+                          Flexible(
+                            child: Text(
+                              'small',
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w400),
+                            ),
                           )
                         ],
                       ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          'Price',
+                      Text('Price',
                           style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w500),
-                        ),
-                        Text(
-                          '       \$ 45',
+                              fontSize: 19, fontWeight: FontWeight.w500)),
+                      Row(
+                        children: [
+                          Icon(Icons.money_outlined, color: Colors.deepOrange),
+                          Flexible(
+                            child: Text(
+                              '\₹45',
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w400),
+                            ),
+                          )
+                        ],
+                      ),
+                      Text('Select item category',
                           style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w400),
-                        )
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Select item category-',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w500),
-                        ),
-                        Text(
-                          'Books Documents Files',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.w400),
-                        )
-                      ],
-                    ),
-                  ]),
-            ),
+                              fontSize: 19, fontWeight: FontWeight.w500)),
+                      Row(
+                        children: [
+                          Icon(Icons.details, color: Colors.deepOrange),
+                          Flexible(
+                            child: Text(
+                              'Books Documents Files',
+                              overflow: TextOverflow.clip,
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.w400),
+                            ),
+                          )
+                        ],
+                      ),
+                    ])),
             // Text('please proceed further'),
             ElevatedButton(
               onPressed: () {

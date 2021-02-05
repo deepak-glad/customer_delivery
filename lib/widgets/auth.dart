@@ -25,7 +25,7 @@ class _AuthPageState extends State<AuthPage> {
       // margin: h < 553
       //     ? const EdgeInsets.only(top: 100, left: 40)
       //     : const EdgeInsets.only(top: 150, left: 50),
-      height: h < 553 ? h : h / 2 + 20,
+      // height: h < 553 ? h : h / 2 + 20,
       // width: MediaQuery.of(context).size.width * 3 / 4,
       // color: Colors.black,
       child: SizedBox(
