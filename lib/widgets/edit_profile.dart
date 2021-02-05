@@ -38,6 +38,8 @@ class _EditProfileState extends State<EditProfile> {
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: Container(
+        child:Theme(
+          data:ThemeData(primaryColor: Colors.deepOrange),
         child: Column(
           // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
@@ -185,7 +187,7 @@ class _EditProfileState extends State<EditProfile> {
               ),
             ),
           ],
-        ),
+        ),)
       ),
     );
   }
