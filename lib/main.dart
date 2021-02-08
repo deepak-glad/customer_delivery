@@ -12,6 +12,7 @@ import 'package:customer_delivery_app/screen/pickup_address.dart';
 import 'package:customer_delivery_app/screen/profile.dart';
 import 'package:customer_delivery_app/screen/saved_address.dart';
 import 'package:customer_delivery_app/screen/send_package.dart';
+import 'package:customer_delivery_app/screen/status_payment.dart';
 import 'package:customer_delivery_app/screen/wallet.dart';
 import 'package:customer_delivery_app/widgets/edit_profile.dart';
 import 'package:customer_delivery_app/screen/track_detail.dart';
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
           TrackOrders.routeName: (ctx) => TrackOrders(),
           SaveAddress.routeName: (ctx) => SaveAddress(),
           Wallet.routeName: (ctx) => Wallet(),
+          PaymentStatus.routeName: (ctx) => PaymentStatus(),
         },
       ),
     );

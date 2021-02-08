@@ -388,7 +388,7 @@ class OrderSummary extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pushNamed(PaymentMethod.routename);
               },
-              child: Text('Pay now'),
+              child: Text('continue'),
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all<Color>(Colors.deepOrange),

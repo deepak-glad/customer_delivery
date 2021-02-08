@@ -17,6 +17,11 @@ class DeliveryModel {
 }
 
 class DeliveryProvider with ChangeNotifier {
+  // List<DeliveryModel> _list = [];
+  // List<DeliveryModel> get list {
+  //   return [..._list];
+  // }
+
   String dlocation;
   String daddress;
   String dpin;
@@ -36,11 +41,14 @@ class DeliveryProvider with ChangeNotifier {
         deliveryPincode: pickedPin,
         deliveryContactDetail: pickedContact,
         deliveryInstructiontoReach: pickedInstruction);
-    print(newDataPicked.deliveryPincode);
+    // print(newDataPicked.deliveryPincode);
     dlocation = newDataPicked.deliveryLocation;
     daddress = newDataPicked.deliveryAddressDetail;
     dpin = newDataPicked.deliveryPincode;
     dinstruction = newDataPicked.deliveryInstructiontoReach;
     dcontact = newDataPicked.deliveryContactDetail;
   }
+  // void add(_list){
+  //     DeliveryModel(deliveryAddressDetail: )
+  // }
 }

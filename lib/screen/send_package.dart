@@ -93,7 +93,8 @@ class _SendPackageState extends State<SendPackage> {
         backgroundColor: Theme.of(context).primaryColor,
       ),
       body: SingleChildScrollView(
-        child: Padding(
+        child: Container(
+          height: 800,
           padding: const EdgeInsets.only(left: 25.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,10 +102,13 @@ class _SendPackageState extends State<SendPackage> {
               DetailSend(),
               Container(
                 width: MediaQuery.of(context).size.width - 70,
-                child: TextField(
-                  decoration: InputDecoration(
-                      hintText: 'Add Instrunction if any',
-                      suffixIcon: Icon(Icons.edit)),
+                child: Theme(
+                  data: ThemeData(primaryColor: Colors.deepOrange),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        hintText: 'Add Instrunction if any',
+                        suffixIcon: Icon(Icons.edit)),
+                  ),
                 ),
               ),
               SizedBox(height: 20),
